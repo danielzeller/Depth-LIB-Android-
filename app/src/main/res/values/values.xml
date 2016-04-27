@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#47000000</color>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+</resources>

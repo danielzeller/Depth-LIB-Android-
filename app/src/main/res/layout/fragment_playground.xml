@@ -1,0 +1,227 @@
+<no.agens.depth.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                             xmlns:tools="http://schemas.android.com/tools"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             tools:context=".MainActivity"
+    >
+    <RelativeLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@color/green"
+        android:layerType="hardware"
+        app:edge_color="@color/statusbar2"
+        >
+
+
+        <ImageView
+
+            android:id="@+id/staturbar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/statusbar2"
+            />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_menu"
+            android:scaleType="centerInside"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="65dp"
+            android:text="Depth"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/actionbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/appbar"
+        android:background="@drawable/actionbar_shadow"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="324dp"
+
+        >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_subheading_margin_top"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Depth"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <SeekBar
+                    android:id="@+id/depth_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                    android:layout_marginRight="@dimen/seekbar_margin_sides"
+                    android:layout_marginTop="@dimen/seekbar_margin_top"
+                    android:padding="@dimen/seekbar_padding"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_subheading_margin_top"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Elevation"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <SeekBar
+                    android:id="@+id/elevation_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                    android:layout_marginRight="@dimen/seekbar_margin_sides"
+                    android:layout_marginTop="@dimen/seekbar_margin_top"
+                    android:padding="@dimen/seekbar_padding"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_subheading_margin_top"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Rotation X"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <SeekBar
+                    android:id="@+id/rotation_x_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                    android:layout_marginRight="@dimen/seekbar_margin_sides"
+                    android:layout_marginTop="@dimen/seekbar_margin_top"
+                    android:padding="@dimen/seekbar_padding"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_subheading_margin_top"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Rotation Y"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <SeekBar
+                    android:id="@+id/rotation_y_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                    android:layout_marginRight="@dimen/seekbar_margin_sides"
+                    android:layout_marginTop="@dimen/seekbar_margin_top"
+                    android:padding="@dimen/seekbar_padding"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_subheading_margin_top"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Rotation Z"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <SeekBar
+                    android:id="@+id/rotation_z_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                    android:layout_marginRight="@dimen/seekbar_margin_sides"
+                    android:layout_marginTop="@dimen/seekbar_margin_top"
+                    android:padding="@dimen/seekbar_padding"
+                    />
+
+
+            </LinearLayout>
+
+    </ScrollView>
+
+
+    <no.agens.depth.DepthLayout
+        android:id="@+id/depth_view"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        app:is_circle="false"
+        >
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sun"
+            />
+    </no.agens.depth.DepthLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="195dp"
+        android:src="@drawable/x_y"
+        />
+
+</no.agens.depth.DepthRendrer>

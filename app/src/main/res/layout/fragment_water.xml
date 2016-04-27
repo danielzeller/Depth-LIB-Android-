@@ -1,0 +1,207 @@
+<no.agens.depth.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                             xmlns:tools="http://schemas.android.com/tools"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             tools:context="no.agens.depth.WaterFragment"
+                             android:layerType="hardware"
+
+    >
+
+    <no.agens.depth.DepthLayout
+        android:id="@+id/root_dl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layerType="hardware"
+        android:paddingTop="@dimen/appbar_height"
+        >
+
+        <no.agens.depth.headers.WaterSceneView
+            android:id="@+id/water_scene"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/water_scene_background"
+            />
+    </no.agens.depth.DepthLayout>
+
+
+    <no.agens.depth.DepthLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@color/blue"
+        android:layerType="hardware"
+        app:edge_color="@color/black"
+        >
+
+
+        <ImageView
+
+            android:id="@+id/staturbar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/statusbar"
+            />
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+
+            android:src="@drawable/ic_menu"
+            android:scaleType="centerInside"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="65dp"
+            android:text="Depth"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fitsSystemWindows="true"
+            />
+    </no.agens.depth.DepthLayout>
+    <ImageView
+        android:id="@+id/actionbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:background="@drawable/actionbar_shadow"
+        />
+    <no.agens.depth.DepthLayout
+        android:id="@+id/dl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:background="@color/white"
+        app:custom_elevation="1dp"
+        android:layerType="hardware"
+        >
+
+        <LinearLayout
+            android:id="@+id/sliders_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_subheading_margin_top"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Noise"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                />
+
+            <SeekBar
+                android:id="@+id/noise_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                android:layout_marginRight="@dimen/seekbar_margin_sides"
+                android:layout_marginTop="@dimen/seekbar_margin_top"
+                android:padding="@dimen/seekbar_padding"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_subheading_margin_top"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Wave Strength"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                />
+
+            <SeekBar
+                android:id="@+id/wave_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                android:layout_marginRight="@dimen/seekbar_margin_sides"
+                android:layout_marginTop="@dimen/seekbar_margin_top"
+                android:padding="@dimen/seekbar_padding"
+                />
+
+
+        </LinearLayout>
+    </no.agens.depth.DepthLayout>
+
+    <no.agens.depth.DepthLayout
+        android:id="@+id/dl3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="450dp"
+        android:background="@color/white"
+        app:custom_elevation="2dp"
+        android:layerType="hardware"
+        >
+
+        <TextView
+            android:id="@+id/about_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_subheading_margin_top"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="Water And Noise"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_heading"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="A water experiment developed
+by Agens in 2015, as an example of how to draw
+advanced canvas based graphics with the Android
+SDK. "
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            />
+
+    </no.agens.depth.DepthLayout>
+
+
+
+    <no.agens.depth.DepthLayout
+        android:id="@+id/fab_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/circle"
+        app:custom_elevation="6dp"
+        android:layerType="hardware"
+        app:edge_color="@color/fab"
+        app:is_circle="true"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_forward"
+            app:backgroundTint="@color/fab"
+            app:rippleColor="@color/fab_highlight"
+            android:layerType="hardware"
+            />
+    </no.agens.depth.DepthLayout>
+</no.agens.depth.DepthRendrer>

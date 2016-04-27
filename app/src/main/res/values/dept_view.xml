@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DepthView">
+
+        <attr name="is_circle" format="boolean"/>
+
+        <attr name="edge_color" format="color"/>
+        <attr name="depth" format="dimension"/>
+        <attr name="custom_elevation" format="dimension"/>
+    </declare-styleable>
+
+</resources>

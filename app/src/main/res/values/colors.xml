@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_grey">#8C9CA4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="divider_color">#DBDBDB</color>
+    <color name="edge_color">#FFFFFF</color>
+    <color name="fab">#F19BA2</color>
+    <color name="fab_highlight">#CB747B</color>
+    <color name="blue">#323453</color>
+    <color name="green">#4E8186</color>
+
+    <color name="statusbar">#282942</color>
+    <color name="statusbar2">#3E676B</color>
+    <color name="text_primary">#727272</color>
+    <color name="black">#000000</color>
+    <color name="fab2">#DC8F9A</color>
+    <color name="splash1">#F19BA2</color>
+    <color name="splash2">#323453</color>
+    <color name="splash3">#649692</color>
+    <color name="splash4">#C68C94</color>
+
+    <color name="fire_end_color">#E89183</color>
+    <color name="fire_start_color">#FCFBEB</color>
+</resources>
