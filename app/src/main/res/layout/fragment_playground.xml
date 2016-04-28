@@ -1,10 +1,10 @@
-<no.agens.depth.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
-                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                             xmlns:tools="http://schemas.android.com/tools"
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-    android:background="#DCDCDC"
-    tools:context=".MainActivity"
+<no.agens.depth.lib.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                 xmlns:tools="http://schemas.android.com/tools"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:background="#DCDCDC"
+                                 tools:context=".MainActivity"
     >
     <RelativeLayout
         android:id="@+id/appbar"
@@ -199,7 +199,7 @@
     </ScrollView>
 
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/depth_view"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -214,7 +214,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/sun"
             />
-    </no.agens.depth.DepthLayout>
+    </no.agens.depth.lib.DepthLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -225,4 +225,4 @@
         android:src="@drawable/x_y"
         />
 
-</no.agens.depth.DepthRendrer>
+</no.agens.depth.lib.DepthRendrer>

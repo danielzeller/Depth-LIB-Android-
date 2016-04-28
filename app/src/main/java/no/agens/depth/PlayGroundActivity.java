@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import no.agens.depth.lib.DepthLayout;
+import no.agens.depth.lib.MaterialMenuDrawable;
+
 public class PlayGroundActivity extends Activity {
 
     private DepthLayout depthView;
@@ -38,7 +41,7 @@ public class PlayGroundActivity extends Activity {
               finish();
             }
         });
-        MaterialMenuDrawable  menuIcon = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN, WaterFragment.TRANSFORM_DURATION);
+        MaterialMenuDrawable menuIcon = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN, WaterFragment.TRANSFORM_DURATION);
         menu.setImageDrawable(menuIcon);
         menuIcon.setIconState(MaterialMenuDrawable.IconState.ARROW);
     }

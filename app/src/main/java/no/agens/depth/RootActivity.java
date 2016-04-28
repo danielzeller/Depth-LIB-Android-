@@ -14,8 +14,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import no.agens.depth.tween.interpolators.ExpoIn;
-import no.agens.depth.tween.interpolators.QuintOut;
+import no.agens.depth.lib.CircularSplashView;
+import no.agens.depth.lib.tween.interpolators.ExpoIn;
+import no.agens.depth.lib.tween.interpolators.QuintOut;
 
 
 public class RootActivity extends Activity {

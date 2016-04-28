@@ -17,7 +17,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
-import no.agens.depth.headers.BearSceneView;
+import no.agens.depth.lib.MaterialMenuDrawable;
 
 
 public class WindFragment extends Fragment implements MenuAnimation {
