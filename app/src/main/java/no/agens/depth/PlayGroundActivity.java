@@ -1,8 +1,8 @@
 package no.agens.depth;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -10,7 +10,7 @@ import android.widget.SeekBar;
 import no.agens.depth.lib.DepthLayout;
 import no.agens.depth.lib.MaterialMenuDrawable;
 
-public class PlayGroundActivity extends AppCompatActivity {
+public class PlayGroundActivity extends Activity {
 
     private DepthLayout depthView;
     private static final float MAX_ROTATION_X = 90;

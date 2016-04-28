@@ -2,12 +2,12 @@ package no.agens.depth;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +19,7 @@ import no.agens.depth.lib.tween.interpolators.ExpoIn;
 import no.agens.depth.lib.tween.interpolators.QuintOut;
 
 
-public class RootActivity extends AppCompatActivity {
+public class RootActivity extends Activity {
     Fragment currentFragment;
 
     @Override
