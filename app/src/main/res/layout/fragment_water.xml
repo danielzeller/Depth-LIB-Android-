@@ -3,7 +3,7 @@
                              xmlns:tools="http://schemas.android.com/tools"
                              android:layout_width="match_parent"
                              android:layout_height="match_parent"
-                             tools:context="no.agens.depth.WaterFragment"
+                             tools:context=".sample.WaterFragment"
                              android:layerType="hardware"
 
     >
@@ -17,7 +17,7 @@
         android:paddingTop="@dimen/appbar_height"
         >
 
-        <no.agens.depth.headers.WaterSceneView
+        <no.agens.depth.sample.WaterSceneView
             android:id="@+id/water_scene"
             android:layout_width="match_parent"
             android:layout_height="180dp"
