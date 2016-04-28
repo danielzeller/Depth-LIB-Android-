@@ -2,7 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "23.0.0"
+    buildToolsVersion "23.0.3"
+    lintOptions {
+          abortOnError false
+    }
 
     defaultConfig {
         applicationId "no.agens.depth"
