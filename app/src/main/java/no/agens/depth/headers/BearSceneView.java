@@ -8,9 +8,9 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
-import no.agens.agtween.FrameRateCounter;
 import no.agens.depth.MathHelper;
 import no.agens.depth.R;
+import no.agens.depth.tween.FrameRateCounter;
 
 /**
  * Created by danielzeller on 01.10.14.

@@ -7,11 +7,8 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import no.agens.agtween.FrameRateCounter;
 import no.agens.depth.R;
+import no.agens.depth.tween.FrameRateCounter;
 
 /**
  * Created by danielzeller on 01.10.14.

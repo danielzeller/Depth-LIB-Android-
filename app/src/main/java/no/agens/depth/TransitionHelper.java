@@ -9,13 +9,13 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import no.agens.agtween.interpolators.BackOut;
-import no.agens.agtween.interpolators.CircInOut;
-import no.agens.agtween.interpolators.ExpoIn;
-import no.agens.agtween.interpolators.ExpoOut;
-import no.agens.agtween.interpolators.QuadInOut;
-import no.agens.agtween.interpolators.QuintInOut;
-import no.agens.agtween.interpolators.QuintOut;
+import no.agens.depth.tween.interpolators.BackOut;
+import no.agens.depth.tween.interpolators.CircInOut;
+import no.agens.depth.tween.interpolators.ExpoIn;
+import no.agens.depth.tween.interpolators.ExpoOut;
+import no.agens.depth.tween.interpolators.QuadInOut;
+import no.agens.depth.tween.interpolators.QuintInOut;
+import no.agens.depth.tween.interpolators.QuintOut;
 
 public class TransitionHelper {
 

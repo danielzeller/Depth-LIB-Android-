@@ -15,8 +15,8 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import no.agens.agtween.interpolators.QuintInOut;
-import no.agens.agtween.interpolators.QuintOut;
+import no.agens.depth.tween.interpolators.QuintOut;
+
 
 /**
  * Created by danielzeller on 03.09.14.
