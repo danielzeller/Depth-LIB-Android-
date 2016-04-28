@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "no.agens.depth.sample"
+        applicationId "no.agens.depth"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
@@ -27,6 +27,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
-    compile 'com.android.support:appcompat-v7:23.3.0'
     compile project(':lib')
 }

@@ -1,13 +1,13 @@
-<no.agens.depth.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
-                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                             xmlns:tools="http://schemas.android.com/tools"
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-                             tools:context=".sample.WaterFragment"
+<no.agens.depth.lib.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                 xmlns:tools="http://schemas.android.com/tools"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 tools:context=".sample.WaterFragment"
 
     >
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/root_dl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,17 +16,17 @@
         android:paddingTop="@dimen/appbar_height"
         >
 
-        <no.agens.depth.sample.BearSceneView
+        <no.agens.depth.BearSceneView
             android:id="@+id/water_scene"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
             android:background="@drawable/bear_bg_gradient"
             />
-    </no.agens.depth.DepthLayout>
+    </no.agens.depth.lib.DepthLayout>
 
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_height"
@@ -64,7 +64,7 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             />
-    </no.agens.depth.DepthLayout>
+    </no.agens.depth.lib.DepthLayout>
 
     <ImageView
         android:id="@+id/actionbar_shadow"
@@ -74,7 +74,7 @@
         android:background="@drawable/actionbar_shadow"
         />
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/dl2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -140,9 +140,9 @@
 
 
         </LinearLayout>
-    </no.agens.depth.DepthLayout>
+    </no.agens.depth.lib.DepthLayout>
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/dl3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -176,10 +176,10 @@ SDK. "
             android:textSize="14sp"
             />
 
-    </no.agens.depth.DepthLayout>
+    </no.agens.depth.lib.DepthLayout>
 
 
-    <no.agens.depth.DepthLayout
+    <no.agens.depth.lib.DepthLayout
         android:id="@+id/fab_container"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -202,5 +202,5 @@ SDK. "
             app:backgroundTint="@color/fab2"
             app:rippleColor="#9A6A70"
             />
-    </no.agens.depth.DepthLayout>
-</no.agens.depth.DepthRendrer>
+    </no.agens.depth.lib.DepthLayout>
+</no.agens.depth.lib.DepthRendrer>
