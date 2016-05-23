@@ -19,5 +19,4 @@ You can reach me on twitter as [@zellah](https://twitter.com/zellah).
 
 Developed by [@zellah](https://twitter.com/zellah) at Agens.no a company situated in Oslo.
 
-
-[![Agens | Digital craftsmanship](http://static.agens.no/images/agens_logo_w_slogan_avenir_small.png)](http://agens.no/)
+[<img src="http://static.agens.no/images/agens_logo_w_slogan_avenir_medium.png" width="340" />](http://agens.no/)
