@@ -2,7 +2,7 @@
 
 This library adds depth/thickness to views. 
 
-[<img src="https://cdn.dribbble.com/users/655449/screenshots/2179342/menu_dribble.gif" width="400"/>](https://www.youtube.com/watch?v=ih2erag2beM)
+[<img src="https://cdn.dribbble.com/users/655449/screenshots/2179342/menu_dribble.gif" width="500"/>](https://www.youtube.com/watch?v=ih2erag2beM)
 
 [See demo on youtube](https://www.youtube.com/watch?v=ih2erag2beM)
 
