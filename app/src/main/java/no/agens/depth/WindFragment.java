@@ -42,7 +42,7 @@ public class WindFragment extends Fragment implements MenuAnimation {
         doIntroAnimation();
         setupFabButton();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(1);
+        ((RootActivity) getActivity()).setCurrentMenuIndex(RootActivity.WIND_SCREEN_MENU_INDEX);
         setupSliders();
         return root;
     }
@@ -53,37 +53,17 @@ public class WindFragment extends Fragment implements MenuAnimation {
         setProgressBarColor(windSeekbar, getResources().getColor(R.color.fab2));
         setProgressBarColor(flamesSeekbar, getResources().getColor(R.color.fab2));
 
-        windSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        windSeekbar.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 bearsScene.setWind(progress);
             }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
         });
 
-        flamesSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        flamesSeekbar.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 bearsScene.setFlamesHeight(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         bearsScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {

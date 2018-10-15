@@ -20,13 +20,13 @@ public class PlayGroundActivity extends Activity {
     private static final float MAX_ELEVATION = 50;
     private static final float MAX_DEPTH = 20;
     private static final float CAMERA_DISTANCE = 6000f;
-    private int seekbarColor;
+    private int seekBarColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_playground);
-        seekbarColor = getResources().getColor(R.color.fab);
+        seekBarColor = getResources().getColor(R.color.fab);
         depthView = (DepthLayout) findViewById(R.id.depth_view);
         depthView.setCameraDistance((CAMERA_DISTANCE * getResources().getDisplayMetrics().density));
         setupSeekBars();
@@ -38,7 +38,7 @@ public class PlayGroundActivity extends Activity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              finish();
+                finish();
             }
         });
         MaterialMenuDrawable menuIcon = new MaterialMenuDrawable(this, Color.WHITE, MaterialMenuDrawable.Stroke.THIN, WaterFragment.TRANSFORM_DURATION);
@@ -63,21 +63,11 @@ public class PlayGroundActivity extends Activity {
 
     private void setupDepthSeekbar() {
         SeekBar depth = (SeekBar) findViewById(R.id.depth_seekbar);
-        WindFragment.setProgressBarColor(depth, seekbarColor);
-        depth.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        WindFragment.setProgressBarColor(depth, seekBarColor);
+        depth.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 depthView.setDepth(MAX_DEPTH * getResources().getDisplayMetrics().density * ((float) progress / (float) seekBar.getMax()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         depth.setProgress((int) (depth.getMax() * 0.1f));
@@ -85,21 +75,11 @@ public class PlayGroundActivity extends Activity {
 
     private SeekBar setupRotationXSeekbar() {
         SeekBar rotationX = (SeekBar) findViewById(R.id.rotation_x_seekbar);
-        WindFragment.setProgressBarColor(rotationX, seekbarColor);
-        rotationX.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        WindFragment.setProgressBarColor(rotationX, seekBarColor);
+        rotationX.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 depthView.setRotationX(-MAX_ROTATION_X + (MAX_ROTATION_X * 2f) * ((float) progress / (float) seekBar.getMax()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         rotationX.setProgress((int) (rotationX.getMax() * 0.1f));
@@ -110,21 +90,11 @@ public class PlayGroundActivity extends Activity {
     private void setupRotationYSeekbar() {
         SeekBar rotationY = (SeekBar) findViewById(R.id.rotation_y_seekbar);
         rotationY.setProgress((int) (rotationY.getMax() * 0.5f));
-        WindFragment.setProgressBarColor(rotationY, seekbarColor);
-        rotationY.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        WindFragment.setProgressBarColor(rotationY, seekBarColor);
+        rotationY.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 depthView.setRotationY(-MAX_ROTATION_Y + (MAX_ROTATION_Y * 2f) * ((float) progress / (float) seekBar.getMax()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
     }
@@ -132,21 +102,11 @@ public class PlayGroundActivity extends Activity {
     private void setupRotationZSeekbar() {
         SeekBar rotation = (SeekBar) findViewById(R.id.rotation_z_seekbar);
         rotation.setProgress(0);
-        WindFragment.setProgressBarColor(rotation, seekbarColor);
-        rotation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        WindFragment.setProgressBarColor(rotation, seekBarColor);
+        rotation.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 depthView.setRotation(-MAX_ROTATION_Z * ((float) progress / (float) seekBar.getMax()));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 
@@ -155,21 +115,11 @@ public class PlayGroundActivity extends Activity {
     private void setupElevationSeekbar() {
         SeekBar elevation = (SeekBar) findViewById(R.id.elevation_seekbar);
         elevation.setProgress(0);
-        WindFragment.setProgressBarColor(elevation, seekbarColor);
-        elevation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        WindFragment.setProgressBarColor(elevation, seekBarColor);
+        elevation.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 depthView.setCustomShadowElevation((MAX_ELEVATION * ((float) progress / (float) seekBar.getMax())) * getResources().getDisplayMetrics().density);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         elevation.setProgress((int) (elevation.getMax() * 0.5f));

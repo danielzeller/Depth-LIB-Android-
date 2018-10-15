@@ -20,6 +20,12 @@ import no.agens.depth.lib.tween.interpolators.QuintOut;
 
 
 public class RootActivity extends Activity {
+
+    public static final int WATER_SCREEN_MENU_INDEX = 0;
+    public static final int WIND_SCREEN_MENU_INDEX = 1;
+    public static final int PLAYGROUND_SCREEN_MENU_INDEX = 2;
+    public static final int ABOUT_SCREEN_MENU_INDEX = 3;
+
     Fragment currentFragment;
 
     @Override
@@ -35,11 +41,11 @@ public class RootActivity extends Activity {
         setupMenu();
     }
 
-    public void setCurretMenuIndex(int curretMenuIndex) {
-        this.curretMenuIndex = curretMenuIndex;
+    public void setCurrentMenuIndex(int currentMenuIndex) {
+        this.currentMenuIndex = currentMenuIndex;
     }
 
-    int curretMenuIndex = 0;
+    int currentMenuIndex = 0;
 
     private void makeAppFullscreen() {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
@@ -68,7 +74,7 @@ public class RootActivity extends Activity {
         translationY.setInterpolator(new QuintOut());
         translationY.setStartDelay(150);
         translationY.start();
-        selectMenuItem(curretMenuIndex, ((TextView) menu.getChildAt(curretMenuIndex).findViewById(R.id.item_text)).getCurrentTextColor());
+        selectMenuItem(currentMenuIndex, ((TextView) menu.getChildAt(currentMenuIndex).findViewById(R.id.item_text)).getCurrentTextColor());
         ((MenuAnimation) currentFragment).animateTOMenu();
     }
 
@@ -84,11 +90,11 @@ public class RootActivity extends Activity {
     private void setupMenu() {
         menu = (ViewGroup) findViewById(R.id.menu_container);
         int color = getResources().getColor(R.color.splash1);
-        addMenuItem(menu, "Water And Noise", R.drawable.splash1, color, R.drawable.menu_btn, 0);
-        addMenuItem(menu, "Two Bears", R.drawable.splash2, getResources().getColor(R.color.splash2), R.drawable.menu_btn2, 1);
-        addMenuItem(menu, "Depth Playground", R.drawable.splash3, getResources().getColor(R.color.splash3), R.drawable.menu_btn3, 2);
-        addMenuItem(menu, "About", R.drawable.splash4, getResources().getColor(R.color.splash4), R.drawable.menu_btn4, 3);
-        selectMenuItem(0, color);
+        addMenuItem(menu, "Water And Noise", R.drawable.splash1, color, R.drawable.menu_btn, WATER_SCREEN_MENU_INDEX);
+        addMenuItem(menu, "Two Bears", R.drawable.splash2, getResources().getColor(R.color.splash2), R.drawable.menu_btn2, WIND_SCREEN_MENU_INDEX);
+        addMenuItem(menu, "Depth Playground", R.drawable.splash3, getResources().getColor(R.color.splash3), R.drawable.menu_btn3, PLAYGROUND_SCREEN_MENU_INDEX);
+        addMenuItem(menu, "About", R.drawable.splash4, getResources().getColor(R.color.splash4), R.drawable.menu_btn4, ABOUT_SCREEN_MENU_INDEX);
+        selectMenuItem(WATER_SCREEN_MENU_INDEX, color);
         menu.setTranslationY(20000);
     }
 
@@ -100,11 +106,11 @@ public class RootActivity extends Activity {
         ic.setSplash(BitmapFactory.decodeResource(getResources(), drawableResource));
         ic.setSplashColor(splashColor);
         item.setOnClickListener(getMenuItemCLick(menuIndex, splashColor));
-        if (menuIndex == 0) {
+        if (menuIndex == WATER_SCREEN_MENU_INDEX) {
             int padding = (int) getResources().getDimension(R.dimen.menu_item_height_padding);
             menu.addView(item, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.menu_item_height) + padding));
             item.setPadding(0, padding, 0, 0);
-        } else if (menuIndex == 3) {
+        } else if (menuIndex == ABOUT_SCREEN_MENU_INDEX) {
             int padding = (int) getResources().getDimension(R.dimen.menu_item_height_padding);
             menu.addView(item, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.menu_item_height) + padding));
             item.setPadding(0, 0, 0, padding);
@@ -118,28 +124,36 @@ public class RootActivity extends Activity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (menuIndex == curretMenuIndex)
+                if (menuIndex == currentMenuIndex)
                     onBackPressed();
-                else if (menuIndex == 0 && !(currentFragment instanceof WaterFragment)) {
-                    ((MenuAnimation) currentFragment).exitFromMenu();
-                    WaterFragment waterFragment = new WaterFragment();
-                    waterFragment.setIntroAnimate(true);
-                    goToFragment(waterFragment);
-                    hideMenu();
-                    selectMenuItem(menuIndex, color);
-                } else if (menuIndex == 1 && !(currentFragment instanceof WindFragment)) {
-                    ((MenuAnimation) currentFragment).exitFromMenu();
-                    WindFragment windFragment = new WindFragment();
-                    windFragment.setIntroAnimate(true);
-                    goToFragment(windFragment);
-                    hideMenu();
-                    selectMenuItem(menuIndex, color);
-                } else if (menuIndex == 2) {
+                else if (menuIndex == WATER_SCREEN_MENU_INDEX && !(currentFragment instanceof WaterFragment)) {
+                    showWaterFragment(menuIndex, color);
+                } else if (menuIndex == WIND_SCREEN_MENU_INDEX && !(currentFragment instanceof WindFragment)) {
+                    showWindFragment(menuIndex, color);
+                } else if (menuIndex == PLAYGROUND_SCREEN_MENU_INDEX) {
                     startActivity(new Intent(RootActivity.this, PlayGroundActivity.class));
-                   onBackPressed();
+                    onBackPressed();
                 }
             }
         };
+    }
+
+    private void showWindFragment(int menuIndex, int color) {
+        ((MenuAnimation) currentFragment).exitFromMenu();
+        WindFragment windFragment = new WindFragment();
+        windFragment.setIntroAnimate(true);
+        goToFragment(windFragment);
+        hideMenu();
+        selectMenuItem(menuIndex, color);
+    }
+
+    private void showWaterFragment(int menuIndex, int color) {
+        ((MenuAnimation) currentFragment).exitFromMenu();
+        WaterFragment waterFragment = new WaterFragment();
+        waterFragment.setIntroAnimate(true);
+        goToFragment(waterFragment);
+        hideMenu();
+        selectMenuItem(menuIndex, color);
     }
 
     private void selectMenuItem(int menuIndex, int color) {
@@ -150,7 +164,7 @@ public class RootActivity extends Activity {
             else
                 unSelect(menuItem);
         }
-        curretMenuIndex = menuIndex;
+        currentMenuIndex = menuIndex;
     }
 
     private void unSelect(View menuItem) {
@@ -161,11 +175,10 @@ public class RootActivity extends Activity {
                 circle.setVisibility(View.INVISIBLE);
             }
         }).start();
-        fadeColoTo(Color.BLACK, (TextView) menuItem.findViewById(R.id.item_text));
+        fadeColorTo(Color.BLACK, (TextView) menuItem.findViewById(R.id.item_text));
     }
 
-    private void fadeColoTo(int newColor, TextView view) {
-
+    private void fadeColorTo(int newColor, TextView view) {
         ObjectAnimator color = ObjectAnimator.ofObject(view, "TextColor", new ArgbEvaluator(), view.getCurrentTextColor(), newColor);
         color.setDuration(200);
         color.start();
@@ -177,7 +190,7 @@ public class RootActivity extends Activity {
         circle.setScaleY(1f);
         circle.setVisibility(View.VISIBLE);
         circle.introAnimate();
-        fadeColoTo(color, (TextView) menuItem.findViewById(R.id.item_text));
+        fadeColorTo(color, (TextView) menuItem.findViewById(R.id.item_text));
     }
 
     public void goToFragment(final Fragment newFragment) {
