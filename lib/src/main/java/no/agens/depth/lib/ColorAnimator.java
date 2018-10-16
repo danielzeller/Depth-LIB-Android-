@@ -1,19 +1,3 @@
-/**
-*  Copyright 2013 Alex Curran
-* 
-*  Licensed under the Apache License, Version 2.0 (the "License");
-*  you may not use this file except in compliance with the License.
-*  You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-*  Unless required by applicable law or agreed to in writing, software
-*  distributed under the License is distributed on an "AS IS" BASIS,
-*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-*  See the License for the specific language governing permissions and
-*  limitations under the License.
-*
-*/
 
 package no.agens.depth.lib;
 
@@ -23,14 +7,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 
-/**
- * Class which allows animation between two colors. Compatible with NineOldAndroids or the standard
- * Android animation APIs (make sure you change the imports when using NOA).
- * <p/>
- * When using with background colors for views, ensure you use the {@link ViewBackgroundWrapper} class.
- * {@link View} does not have a <code>getBackgroundColor()</code> method required by the {@link ObjectAnimator}
- * framework; the wrapper class solves this issue.
- */
 public class ColorAnimator {
 
     public static ObjectAnimator ofColor(Object target, String propertyName, int from, int to) {
@@ -67,7 +43,7 @@ public class ColorAnimator {
 	 */
 	public static class ViewBackgroundWrapper {
 
-		private View mView;
+		private final View mView;
 
 		public ViewBackgroundWrapper(View v) {
 			mView = v;
@@ -87,7 +63,5 @@ public class ColorAnimator {
 		public void setBackgroundColor(int color) {
 			mView.setBackgroundColor(color);
 		}
-
 	}
-
 }

@@ -13,7 +13,7 @@ import no.agens.depth.lib.MathHelper;
 
 public class NoiseEffect extends Renderable {
 
-    private Paint paint = new Paint();
+    private final Paint paint = new Paint();
     BitmapShader shader;
     Matrix matrix;
     float scale;

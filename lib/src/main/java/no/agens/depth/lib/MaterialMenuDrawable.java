@@ -681,7 +681,7 @@ public class MaterialMenuDrawable extends Drawable implements Animatable {
     /*
      * Animations
      */
-    private Property<MaterialMenuDrawable, Float> transformationProperty
+    private final Property<MaterialMenuDrawable, Float> transformationProperty
             = new Property<MaterialMenuDrawable, Float>(Float.class, "transformation") {
         @Override
         public Float get(MaterialMenuDrawable object) {

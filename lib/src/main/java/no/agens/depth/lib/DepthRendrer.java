@@ -17,7 +17,7 @@ import no.agens.depth.lib.R;
 
 public class DepthRendrer extends RelativeLayout {
 
-    private Paint shadowPaint = new Paint();
+    private final Paint shadowPaint = new Paint();
     private NinePatchDrawable softShadow;
     private Drawable roundSoftShadow;
 
@@ -209,9 +209,8 @@ public class DepthRendrer extends RelativeLayout {
     }
 
     public float getAngle(PointF point1, PointF point2) {
-        float angle = (float) Math.toDegrees(Math.atan2(point1.y - point2.y, point1.x - point2.x));
 
-        return angle;
+        return (float) Math.toDegrees(Math.atan2(point1.y - point2.y, point1.x - point2.x));
     }
 
     private void drawLeftEdge(DepthLayout dl, Canvas canvas, float[] src) {

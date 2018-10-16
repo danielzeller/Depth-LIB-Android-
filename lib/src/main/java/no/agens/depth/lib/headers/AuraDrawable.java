@@ -7,14 +7,14 @@ import android.graphics.drawable.Drawable;
 import no.agens.depth.lib.MathHelper;
 
 public class AuraDrawable extends Renderable {
-    private Drawable drawable;
-    long lastflicker;
+    private final Drawable drawable;
+    private long lastFlicker;
 
     public AuraDrawable(Drawable drawable, Rect position) {
         super(null, 0, 0);
         drawable.setBounds(position);
         this.drawable = drawable;
-        lastflicker = System.currentTimeMillis();
+        lastFlicker = System.currentTimeMillis();
     }
 
     @Override
@@ -23,9 +23,9 @@ public class AuraDrawable extends Renderable {
     }
 
     public void update(float deltaTime, float wind) {
-        if (lastflicker + 50 < System.currentTimeMillis()) {
+        if (lastFlicker + 50 < System.currentTimeMillis()) {
             drawable.setAlpha((int) (255 * (30f + (float) MathHelper.rand.nextInt(25)) / 100f));
-            lastflicker = System.currentTimeMillis();
+            lastFlicker = System.currentTimeMillis();
         }
     }
 

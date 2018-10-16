@@ -11,7 +11,7 @@ public class BackOut implements TimeInterpolator {
         float s = param_s;
         return (t-=1)*t*((s+1)*t + s) + 1;
     }
-    protected float param_s = 1.70158f;
+    private float param_s = 1.70158f;
 
     public BackOut amount(float s) {
         param_s = s;

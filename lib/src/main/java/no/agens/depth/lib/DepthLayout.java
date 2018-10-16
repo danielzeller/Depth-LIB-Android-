@@ -14,8 +14,6 @@ import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.RelativeLayout;
 
-import no.agens.depth.lib.R;
-
 public class DepthLayout extends RelativeLayout {
 
 
@@ -47,12 +45,17 @@ public class DepthLayout extends RelativeLayout {
 
         edgePaint.setColor(DEFAULT_EDGE_COLOR);
         edgePaint.setAntiAlias(true);
+        TypedArray arr = getContext().obtainStyledAttributes(attrs, R.styleable.DepthView);
         if (attrs != null) {
-            TypedArray arr = getContext().obtainStyledAttributes(attrs, R.styleable.DepthView);
-            edgePaint.setColor(arr.getInt(R.styleable.DepthView_edge_color, DEFAULT_EDGE_COLOR));
-            setIsCircle(arr.getBoolean(R.styleable.DepthView_is_circle, false));
-            depth = arr.getDimension(R.styleable.DepthView_depth, DEFAULT_THICKNESS * getResources().getDisplayMetrics().density);
-            customShadowElevation = arr.getDimension(R.styleable.DepthView_custom_elevation, 0);
+            try {
+                edgePaint.setColor(arr.getInt(R.styleable.DepthView_edge_color, DEFAULT_EDGE_COLOR));
+                setIsCircle(arr.getBoolean(R.styleable.DepthView_is_circle, false));
+                depth = arr.getDimension(R.styleable.DepthView_depth, DEFAULT_THICKNESS * getResources().getDisplayMetrics().density);
+                customShadowElevation = arr.getDimension(R.styleable.DepthView_custom_elevation, 0);
+            } finally {
+                arr.recycle();
+            }
+
         } else {
             edgePaint.setColor(DEFAULT_EDGE_COLOR);
             depth = DEFAULT_THICKNESS * getResources().getDisplayMetrics().density;
@@ -87,7 +90,7 @@ public class DepthLayout extends RelativeLayout {
 
     public void setDepth(float depth) {
         this.depth = depth;
-        ((View)getParent()).invalidate();
+        ((View) getParent()).invalidate();
     }
 
     public boolean isCircle() {
@@ -183,7 +186,7 @@ public class DepthLayout extends RelativeLayout {
         return bottomRightBack;
     }
 
-    PointF topLeft = new PointF(0, 0);
+    final PointF topLeft = new PointF(0, 0);
     PointF topRight = new PointF(0, 0);
     PointF bottomLeft = new PointF(0, 0);
     PointF bottomRight = new PointF(0, 0);
@@ -203,7 +206,7 @@ public class DepthLayout extends RelativeLayout {
 
     public void setCustomShadowElevation(float customShadowElevation) {
         this.customShadowElevation = customShadowElevation;
-        ((View)getParent()).invalidate();
+        ((View) getParent()).invalidate();
     }
 
     public float getCustomShadowElevation() {
@@ -221,7 +224,7 @@ public class DepthLayout extends RelativeLayout {
         PointF bottomRightBack = new PointF(0, 0);
         int padding;
 
-        public boolean calculateBounds(DepthLayout target) {
+        public void calculateBounds(DepthLayout target) {
             float[] src = new float[8];
             float density = getResources().getDisplayMetrics().density;
             float offsetY = customShadowElevation;
@@ -242,7 +245,6 @@ public class DepthLayout extends RelativeLayout {
             bottomRightBack.x = src[6] + target.getLeft() + offsetX;
             bottomRightBack.y = src[7] + target.getTop() + offsetY;
 
-            return false;
         }
 
         Matrix matrix = new Matrix();

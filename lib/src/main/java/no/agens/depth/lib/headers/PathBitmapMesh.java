@@ -9,18 +9,17 @@ import android.graphics.PathMeasure;
 import android.view.animation.LinearInterpolator;
 
 public class PathBitmapMesh {
-    public float[] drawingVerts;
+    public final float[] drawingVerts;
     public final float[] staticVerts;
     private static final int HORIZONTAL_SLICES = 6;
     private static final int VERTICAL_SLICES = 1;
-    private int totaolSlicesCount;
     int horizontalSlices, verticalSlices;
     public Bitmap bitmap;
 
     public PathBitmapMesh(int horizontalSlices, int verticalSlices, Bitmap bitmap, int animDuration) {
-        totaolSlicesCount = (HORIZONTAL_SLICES + 1) * (VERTICAL_SLICES + 1);
-        drawingVerts = new float[totaolSlicesCount * 2];
-        staticVerts = new float[totaolSlicesCount * 2];
+        int totalSlicesCount = (HORIZONTAL_SLICES + 1) * (VERTICAL_SLICES + 1);
+        drawingVerts = new float[totalSlicesCount * 2];
+        staticVerts = new float[totalSlicesCount * 2];
         this.horizontalSlices = horizontalSlices;
         this.verticalSlices = verticalSlices;
         this.bitmap = bitmap;
@@ -59,15 +58,15 @@ public class PathBitmapMesh {
 
     private void createVerts() {
 
-        float xDimesion = (float) bitmap.getWidth();
-        float yDimesion = (float) bitmap.getHeight();
+        float xDimension = (float) bitmap.getWidth();
+        float yDimension = (float) bitmap.getHeight();
 
         int index = 0;
 
         for (int y = 0; y <= VERTICAL_SLICES; y++) {
-            float fy = yDimesion * y / VERTICAL_SLICES;
+            float fy = yDimension * y / VERTICAL_SLICES;
             for (int x = 0; x <= HORIZONTAL_SLICES; x++) {
-                float fx = xDimesion * x / HORIZONTAL_SLICES;
+                float fx = xDimension * x / HORIZONTAL_SLICES;
                 setXY(drawingVerts, index, fx, fy);
                 setXY(staticVerts, index, fx, fy);
                 index += 1;
@@ -101,8 +100,7 @@ public class PathBitmapMesh {
             if (yIndexValue == 0) {
                 setXY(drawingVerts, i, coords[0], coords2[1]);
             } else {
-                float desiredYCoord = bottomCoord;
-                setXY(drawingVerts, i, coords[0], desiredYCoord);
+                setXY(drawingVerts, i, coords[0], bottomCoord);
 
             }
         }

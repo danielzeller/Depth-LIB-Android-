@@ -17,11 +17,12 @@ import java.util.ArrayList;
 /**
  * Created by danielzeller on 06.10.14.
  */
+@SuppressWarnings("unchecked")
 public class ReboundObjectAnimator extends ValueAnimator {
 
     private Method propertyMethod;
     Property<View, Float> property;
-    private float from;
+    private final float from;
     private float to;
     private Spring spring;
     private Object target;
@@ -33,14 +34,12 @@ public class ReboundObjectAnimator extends ValueAnimator {
     float fraction;
 
     public static ReboundObjectAnimator ofFloat(Object target, String propertyName, float from, float to) {
-        ReboundObjectAnimator animator = new ReboundObjectAnimator(target, propertyName, from, to);
 
-        return animator;
+        return new ReboundObjectAnimator(target, propertyName, from, to);
     }
     public static ReboundObjectAnimator ofFloat(Object target, Property propertyName, float from, float to) {
-        ReboundObjectAnimator animator = new ReboundObjectAnimator(target, propertyName, from, to);
 
-        return animator;
+        return new ReboundObjectAnimator(target, propertyName, from, to);
     }
     public ReboundObjectAnimator(Object target, String setterName, float from, float to) {
         propertyMethod = getPropertyMethod(target, "set" + setterName);
@@ -71,9 +70,7 @@ public class ReboundObjectAnimator extends ValueAnimator {
                 if (propertyMethod != null)
                     try {
                         propertyMethod.invoke(target, currentAnimatedValue);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
+                    } catch (IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();
                     }
                 else if(property!=null)
@@ -172,7 +169,7 @@ public class ReboundObjectAnimator extends ValueAnimator {
 
     public void addUpdateListener(AnimatorUpdateListener listener) {
         if (updateListeners == null) {
-            updateListeners = new ArrayList<AnimatorUpdateListener>();
+            updateListeners = new ArrayList<>();
         }
         updateListeners.add(listener);
     }

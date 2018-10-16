@@ -5,7 +5,7 @@ import android.animation.TimeInterpolator;
 /**
  * Created by danielzeller on 14.04.15.
  */
-public class CircOut implements TimeInterpolator {
+class CircOut implements TimeInterpolator {
 
     @Override
     public float getInterpolation(float t) {

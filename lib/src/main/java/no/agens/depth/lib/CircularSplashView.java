@@ -23,7 +23,7 @@ import no.agens.depth.lib.tween.interpolators.QuintOut;
  */
 public class CircularSplashView extends View {
 
-    private List<CircledDrawable> circles = new ArrayList<CircledDrawable>();
+    private final List<CircledDrawable> circles = new ArrayList<>();
 
     public CircularSplashView(Context context) {
         super(context);
@@ -76,9 +76,9 @@ public class CircularSplashView extends View {
     }
 
     interface CircledDrawable {
-        public void startAnim();
+        void startAnim();
 
-        public void draw(Canvas canvas);
+        void draw(Canvas canvas);
     }
 
     public class CircleBitmapExpand implements CircledDrawable {

@@ -13,7 +13,7 @@ import no.agens.depth.lib.MathHelper;
 
 public class ParticleSystem extends Renderable {
     public static final int DURATION = 10000;
-    Paint particlePaint = new Paint();
+    final Paint particlePaint = new Paint();
     long lastEmit;
     private int emitInterWall;
     private float gravityY;
@@ -51,13 +51,13 @@ public class ParticleSystem extends Renderable {
         color = ValueAnimator.ofObject(new ArgbEvaluator(), startColor, endColor, Color.TRANSPARENT).setDuration(DURATION);
     }
 
-    List<Particle> paricles = new ArrayList<>();
+    List<Particle> particles = new ArrayList<>();
 
     @Override
     public void draw(Canvas canvas) {
 
-        for (int i = 0; i < paricles.size(); i++) {
-            Particle p = paricles.get(i);
+        for (int i = 0; i < particles.size(); i++) {
+            Particle p = particles.get(i);
             setParticlePaintColor(p);
             canvas.drawRect(p.x, p.y, p.x + particleSize, p.y + particleSize, particlePaint);
         }
@@ -69,8 +69,8 @@ public class ParticleSystem extends Renderable {
         if (lastEmit + emitInterWall < currentTimeMillis) {
             addParticle();
         }
-        for (int i = 0; i < paricles.size(); i++) {
-            Particle particle = paricles.get(i);
+        for (int i = 0; i < particles.size(); i++) {
+            Particle particle = particles.get(i);
             particle.y += gravityY * deltaTime;
             particle.y += particle.randomSpeedY * deltaTime;
             particle.x += particle.randomSpeedX * deltaTime;
@@ -81,14 +81,14 @@ public class ParticleSystem extends Renderable {
                 particle.setRandomSpeed(MathHelper.randomRange(-randomMovementX,randomMovementX), MathHelper.randomRange(-randomMovementY,randomMovementY));
             }
             if (particle.y < minYCoord) {
-                paricles.remove(i);
+                particles.remove(i);
                 i--;
             }
         }
     }
 
     private void addParticle() {
-        paricles.add(new Particle(x + MathHelper.randomRange(-randomXPlacement,randomXPlacement), y, MathHelper.randomRange(-randomMovementX,randomMovementX), MathHelper.randomRange(-randomMovementY, randomMovementY)));
+        particles.add(new Particle(x + MathHelper.randomRange(-randomXPlacement,randomXPlacement), y, MathHelper.randomRange(-randomMovementX,randomMovementX), MathHelper.randomRange(-randomMovementY, randomMovementY)));
         lastEmit = System.currentTimeMillis();
     }
 

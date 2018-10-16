@@ -11,7 +11,7 @@ public class BackIn implements TimeInterpolator {
         float s = param_s;
         return t*t*((s+1)*t - s);
     }
-    protected float param_s = 1.70158f;
+    private float param_s = 1.70158f;
 
     public BackIn amount(float s) {
         param_s = s;
