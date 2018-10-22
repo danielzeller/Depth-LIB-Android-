@@ -7,7 +7,7 @@ This library adds depth/thickness to views.
 [See demo on youtube](https://www.youtube.com/watch?v=ih2erag2beM)
 
 ## Demo 
-The demo code contains some examples of Canvas drawing techniques to create particle systems, waves and grain effect. I wasn't really happy with the default shadows in Android beacuse they start misbehaving when they are rotated so I made my own shadow solution. The project also contains various tweening functions for animations, and uses the Facebook rebound lib for some tweens. Don't expect too much from this lib, it was written as a quick prototype, so the visuals look good but the code behind it could have been better.
+The demo code contains some examples of Canvas drawing techniques to create particle systems, waves and grain effect. I wasn't really happy with the default shadows in Android because they start misbehaving when they are rotated so I made my own shadow solution. The project also contains various tweening functions for animations, and uses the Facebook rebound lib for some tweens. Don't expect too much from this lib, it was written as a quick prototype, so the visuals look good but the code behind it could have been better.
 
 
 ## Contact
