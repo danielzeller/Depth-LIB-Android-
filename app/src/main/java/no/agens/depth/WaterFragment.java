@@ -40,7 +40,7 @@ public class WaterFragment extends Fragment implements MenuAnimation {
         introAnimate();
         setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurrentMenuIndex(RootActivity.WATER_SCREEN_MENU_INDEX);
 
         return root;
     }
@@ -55,36 +55,16 @@ public class WaterFragment extends Fragment implements MenuAnimation {
         noiseSeekBar.setProgress(50);
         waveSeekBar.setProgress(50);
 
-        waveSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        waveSeekBar.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 waterScene.setWaveHeight(progress / 4f * getResources().getDisplayMetrics().density);
             }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
         });
-        noiseSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        noiseSeekBar.setOnSeekBarChangeListener(new SeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 waterScene.setNoiseIntensity((float) progress / 100f);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
     }
