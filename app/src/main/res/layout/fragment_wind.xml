@@ -193,14 +193,14 @@ SDK. "
         app:is_circle="true"
         >
 
-        <android.support.design.widget.FloatingActionButton
+        <ImageButton
             android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:clickable="true"
             android:src="@drawable/ic_forward"
-            app:backgroundTint="@color/fab2"
-            app:rippleColor="#9A6A70"
+            android:background="@drawable/fab_bg"
+            android:layerType="hardware"
             />
     </no.agens.depth.lib.DepthLayout>
 </no.agens.depth.lib.DepthRendrer>

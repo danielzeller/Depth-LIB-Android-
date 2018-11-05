@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.RelativeLayout;
 
-import no.agens.depth.lib.R;
 
 public class DepthRendrer extends RelativeLayout {
 

@@ -7,17 +7,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 
-import com.facebook.rebound.SimpleSpringListener;
-import com.facebook.rebound.Spring;
-import com.facebook.rebound.SpringConfig;
-import com.facebook.rebound.SpringSystem;
-
 import no.agens.depth.lib.headers.Renderable;
 
 /**
  * Created by danielzeller on 01.10.14.
  */
-public class RenderableThree extends Renderable {
+public class RenderableTree extends Renderable {
     private final float[] drawingVerts = new float[TOTAL_SLICES_COUNT * 2];
     private final float[] staticVerts = new float[TOTAL_SLICES_COUNT * 2];
     private static final int HORIZONTAL_SLICES = 1;
@@ -28,11 +23,10 @@ public class RenderableThree extends Renderable {
 
     private Path pathLeft = new Path();
     private Path pathRight = new Path();
-    private SpringSystem springSystem = SpringSystem.create();
     private boolean isBounceAnimatin = false;
     private Paint paint = new Paint();
 
-    public RenderableThree(Bitmap bitmap, float x, float y, float alpha) {
+    public RenderableTree(Bitmap bitmap, float x, float y, float alpha) {
         super(bitmap, x, y );
         p.setColor(Color.BLACK);
         p.setStrokeWidth(6);
@@ -127,38 +121,12 @@ public class RenderableThree extends Renderable {
             offsetInPercent = offset ;
     }
 
-    Spring spring;
-
-    public void bounceBack() {
-        cancelBounce();
-        isBounceAnimatin = true;
-        spring = springSystem.createSpring();
-        spring.setSpringConfig(SpringConfig.fromOrigamiTensionAndFriction(150, 4));
-        final float offsetAtStart = offsetInPercent;
-        spring.addListener(new SimpleSpringListener() {
-
-            @Override
-            public void onSpringUpdate(Spring spring) {
-                float value = (float) spring.getCurrentValue();
-                offsetInPercent = offsetAtStart - (offsetAtStart * value);
-            }
-
-            @Override
-            public void onSpringAtRest(Spring spring) {
-                super.onSpringAtRest(spring);
-                isBounceAnimatin = false;
-            }
-        });
-        spring.setEndValue(1);
-    }
 
     public boolean isBounceAnimatin() {
         return isBounceAnimatin;
     }
 
     public void cancelBounce() {
-        if (spring != null)
-            spring.destroy();
         isBounceAnimatin = false;
     }
 

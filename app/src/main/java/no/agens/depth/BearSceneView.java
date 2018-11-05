@@ -56,15 +56,15 @@ public class BearSceneView extends View {
 
     private void init() {
         renderables = new Renderable[17];
-        Bitmap threeB = BitmapFactory.decodeResource(getResources(), R.mipmap.tree);
-        addThree(threeB,getMeasuredWidth() * 0.18f, getMeasuredHeight() * -0.65f, 0.28f, 0.46f);
-        addThree(threeB,getMeasuredWidth() * 0.6f, getMeasuredHeight() * -0.65f, 0.33f, 0.46f);
-        addThree(threeB,getMeasuredWidth() * 0.45f, getMeasuredHeight() * -0.45f, 0.5f, 0.8f);
-        addThree(threeB,getMeasuredWidth() * 0.13f, getMeasuredHeight() * -0.65f, 0.3f, 0.46f);
-        addThree(threeB,getMeasuredWidth() * 0.83f, getMeasuredHeight() * -0.2f, 0.5f, 1f);
-        addThree(threeB,getMeasuredWidth() * 0.02f, getMeasuredHeight() * -0.1f, 0.8f, 1f);
-        addThree(threeB,getMeasuredWidth() * 0.18f, getMeasuredHeight() * 0.15f, 0.8f, 1f);
-        addThree(threeB,getMeasuredWidth() * 0.7f, getMeasuredHeight() * -0.1f, 0.8f, 1f);
+        Bitmap treeB = BitmapFactory.decodeResource(getResources(), R.mipmap.tree);
+        addTree(treeB,getMeasuredWidth() * 0.18f, getMeasuredHeight() * -0.65f, 0.28f, 0.46f);
+        addTree(treeB,getMeasuredWidth() * 0.6f, getMeasuredHeight() * -0.65f, 0.33f, 0.46f);
+        addTree(treeB,getMeasuredWidth() * 0.45f, getMeasuredHeight() * -0.45f, 0.5f, 0.8f);
+        addTree(treeB,getMeasuredWidth() * 0.13f, getMeasuredHeight() * -0.65f, 0.3f, 0.46f);
+        addTree(treeB,getMeasuredWidth() * 0.83f, getMeasuredHeight() * -0.2f, 0.5f, 1f);
+        addTree(treeB,getMeasuredWidth() * 0.02f, getMeasuredHeight() * -0.1f, 0.8f, 1f);
+        addTree(treeB,getMeasuredWidth() * 0.18f, getMeasuredHeight() * 0.15f, 0.8f, 1f);
+        addTree(treeB,getMeasuredWidth() * 0.7f, getMeasuredHeight() * -0.1f, 0.8f, 1f);
 
         Bitmap bear1 = BitmapFactory.decodeResource(getResources(), R.mipmap.bear_1);
         Bitmap bear2 = BitmapFactory.decodeResource(getResources(), R.mipmap.bear_2);
@@ -134,9 +134,9 @@ public class BearSceneView extends View {
 
     int index = 0;
 
-    void addThree(Bitmap bitmap,float x, float y, float scale, float alpha) {
+    void addTree(Bitmap bitmap, float x, float y, float scale, float alpha) {
 
-        renderables[index] = new RenderableThree(bitmap, x, y, alpha);
+        renderables[index] = new RenderableTree(bitmap, x, y, alpha);
         renderables[index].setScale(scale, scale);
         index += 1;
     }
