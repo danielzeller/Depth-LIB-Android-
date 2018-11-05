@@ -20,12 +20,15 @@ implementation 'no.agens:depthlib:1.0.1'
 
 ## More Libraries
 Make sure to also checkout Metaballs LIB:
+
 [<img src="https://github.com/danielzeller/MetaBalls-LIB-Android/blob/master/Artwork/TwoClips.gif?raw=true" width="400"/>](https://github.com/danielzeller/MetaBalls-LIB-Android)
+
 [LINK](https://github.com/danielzeller/MetaBalls-LIB-Android)
 
 and Blur LIB:
 
 [<img src="https://github.com/danielzeller/Blur-LIB-Android/blob/master/Artwork/Transition.gif?raw=true" width="400"/>](https://github.com/danielzeller/Blur-LIB-Android)
+
 [LINK](https://github.com/danielzeller/Blur-LIB-Android)
 
 
